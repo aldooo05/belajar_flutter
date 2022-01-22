@@ -51,30 +51,28 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("HALAMAN PERTAMA"),
-          actions: [IconButton(onPressed: () {}, icon: Icon(Icons.menu))],
-        ),
-        body: Center(
-            child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              Text("Text 1"),
-              Text("Text 2"),
-              Text("Text 3"),
-            ]),
-            Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              Text("Text 4"),
-              Text("Text 5"),
-              Text("Text 6"),
-            ]),
-            Column(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-              Text("Text 7"),
-              Text("Text 8"),
-              Text("Text 9"),
-            ]),
-          ],
-        )));
+      appBar: AppBar(
+        title: const Text("HALAMAN PERTAMA"),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.menu))],
+      ),
+      body: Center(
+          child: Column(
+        children: [
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+              child: Text("ini text container"),
+              color: Colors.red,
+            ),
+          ),
+          SizedBox(
+            height: 100.0,
+          ),
+          Expanded(child: Container(color: Colors.blue))
+        ],
+      )),
+    );
   }
 }
